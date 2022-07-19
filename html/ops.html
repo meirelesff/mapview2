@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: mapview + mapview adds data from the second map to the first</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for ops {mapview2}"><tr><td>ops {mapview2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>mapview + mapview adds data from the second map to the first</h2>
+
+<h3>Description</h3>
+
+<p>mapview + mapview adds data from the second map to the first
+</p>
+<p>mapview + data adds spatial data (raster*, sf*, sp*) to a mapview map
+</p>
+<p>mapview + NULL returns the LHS map
+</p>
+<p>[...]
+</p>
+<p>mapview | mapview provides a slider in the middle to compare two maps.
+</p>
+<p>mapview | NULL returns the LHS map
+</p>
+<p>NULL | mapview returns the RHS map
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'mapview,mapview'
+e1 + e2
+
+## S4 method for signature 'mapview,ANY'
+e1 + e2
+
+## S4 method for signature 'mapview,'NULL''
+e1 + e2
+
+## S4 method for signature 'mapview,character'
+e1 + e2
+
+## S4 method for signature 'mapview,'NULL''
+e1 | e2
+
+## S4 method for signature ''NULL',mapview'
+e1 | e2
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>e1</code></td>
+<td>
+<p>a leaflet or mapview map, or NULL.</p>
+</td></tr>
+<tr valign="top"><td><code>e2</code></td>
+<td>
+<p>a leaflet or mapview map, or NULL.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+  m1 &lt;- mapView(franconia, col.regions = "red")
+  m2 &lt;- mapView(breweries)
+
+  ### add two mapview objects
+  m1 + m2
+
+  ### add layers to a mapview object
+  if (interactive()) {
+    library(plainview)
+    m1 + breweries + plainview::poppendorf[[4]]
+  }
+
+  m1 &lt;- mapView(franconia, col.regions = "red")
+  m2 &lt;- mapView(breweries)
+
+  ### add two mapview objects
+  m1 | m2
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mapview2</em> version 2.10.4.9005 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

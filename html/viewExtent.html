@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: View extent/bbox of spatial objects interactively</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for viewExtent {mapview2}"><tr><td>viewExtent {mapview2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>View extent/bbox of spatial objects interactively</h2>
+
+<h3>Description</h3>
+
+<p>This function produces an interactive view of the extent/bbox
+of the supplied spatial object
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+viewExtent(
+  x,
+  map = NULL,
+  popup = NULL,
+  layer.name = NULL,
+  alpha.regions = 0.2,
+  label = NULL,
+  ...
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>either a Raster*, sf* or Spatial* object</p>
+</td></tr>
+<tr valign="top"><td><code>map</code></td>
+<td>
+<p>a leaflet or mapview map the extent should be added to. If NULL
+standard background layers are created.</p>
+</td></tr>
+<tr valign="top"><td><code>popup</code></td>
+<td>
+<p>a <code>list</code> of HTML strings with the popup contents, usually
+created from <code><a href="../../leafpop/html/popup.html">popupTable</a></code>. See <code><a href="../../leaflet/html/map-layers.html">addControl</a></code> for
+details.</p>
+</td></tr>
+<tr valign="top"><td><code>layer.name</code></td>
+<td>
+<p>the name of the layer to be shown on the map.</p>
+</td></tr>
+<tr valign="top"><td><code>alpha.regions</code></td>
+<td>
+<p>opacity of the fills or the raster layer(s).</p>
+</td></tr>
+<tr valign="top"><td><code>label</code></td>
+<td>
+<p>a character vector of labels to be shown on mouseover. See
+<code><a href="../../leaflet/html/map-layers.html">addControl</a></code> for details.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed on to <code><a href="../../leaflet/html/map-layers.html">addRectangles</a></code></p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Tim Appelhans
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(leaflet)
+
+viewExtent(breweries)
+viewExtent(franconia) + breweries
+mapview(franconia) %&gt;% leafem::addExtent(franconia, fillColor = "yellow")
+leaflet() %&gt;% addProviderTiles("OpenStreetMap") %&gt;% leafem::addExtent(breweries)
+leaflet() %&gt;% addProviderTiles("OpenStreetMap") %&gt;% leafem::addExtent(breweries)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mapview2</em> version 2.10.4.9005 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

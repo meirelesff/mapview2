@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Delete elements from a map.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for removeMapJunk {mapview2}"><tr><td>removeMapJunk {mapview2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Delete elements from a map.</h2>
+
+<h3>Description</h3>
+
+<p>Delete elements from a map.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+removeMapJunk(map, junk = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>map</code></td>
+<td>
+<p>the map from which to remove elements.</p>
+</td></tr>
+<tr valign="top"><td><code>junk</code></td>
+<td>
+<p>a charcter vector of elements to remove. If NULL (the default),
+nothing is removed and the map is returned as is. See Details for a list
+of currently supported elements.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Currently supports removal of
+</p>
+
+<ul>
+<li><p> &quot;zoomControl&quot;
+</p>
+</li>
+<li><p> &quot;layersControl&quot;
+</p>
+</li>
+<li><p> &quot;homeButton&quot;
+</p>
+</li>
+<li><p> &quot;scaleBar&quot;
+</p>
+</li>
+<li><p> &quot;drawToolbar&quot;
+</p>
+</li>
+<li><p> &quot;easyButton&quot;
+</p>
+</li></ul>
+
+<p>This is mainly useful when taking a static screenshot of a map.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+if (interactive()) {
+  library(mapview)
+
+  map = mapview(franconia)
+
+  removeMapJunk(map, "zoomControl")
+}
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mapview2</em> version 2.10.4.9005 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

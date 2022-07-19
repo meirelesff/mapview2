@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Save mapview or leaflet map as HTML and/or image</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for mapshot {mapview2}"><tr><td>mapshot {mapview2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Save mapview or leaflet map as HTML and/or image</h2>
+
+<h3>Description</h3>
+
+<p>Save a mapview or leaflet map as <code>.html</code> index file or <code>.png</code>,
+<code>.pdf</code>, or <code>.jpeg</code> image.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+mapshot(
+  x,
+  url = NULL,
+  file = NULL,
+  remove_controls = c("zoomControl", "layersControl", "homeButton", "scaleBar",
+    "drawToolbar", "easyButton"),
+  ...
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p><code>mapview</code> or <code>leaflet</code> object (or any other hmtlwidget).</p>
+</td></tr>
+<tr valign="top"><td><code>url</code></td>
+<td>
+<p>Output <code>.html</code> file. If not supplied and 'file' is specified,
+a temporary index file will be created.</p>
+</td></tr>
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>Output <code>.png</code>, <code>.pdf</code>, or <code>.jpeg</code> file.</p>
+</td></tr>
+<tr valign="top"><td><code>remove_controls</code></td>
+<td>
+<p><code>character</code> vector of control buttons to be removed
+from the map when saving to file. Any combination of
+&quot;zoomControl&quot;, &quot;layersControl&quot;, &quot;homeButton&quot;, &quot;scaleBar&quot;, &quot;drawToolbar&quot;,
+&quot;easyButton&quot;. If set to <code>NULL</code> nothing will be removed. Ignord if <code>x</code>
+is not a mapview or leaflet map.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Further arguments passed on to <code><a href="../../htmlwidgets/help/saveWidget.html">saveWidget</a></code>
+and/or <code><a href="../../webshot/help/webshot.html">webshot</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>mapshot can be used to save both leaflet and mapview maps as html or png
+files or both. In theory, it should also work for any and all other htmlwidgets
+but has not been tested extensively for other htmlwidgets.
+</p>
+<p>In case you want to save larger maps mapshot is likely to fail. You can try
+setting <code>selfcontained = FALSE</code> to avoid errors and create a valid
+local html file.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../webshot/html/webshot.html">webshot</a></code>, <code><a href="../../htmlwidgets/html/saveWidget.html">saveWidget</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Not run: 
+  m = mapview(breweries)
+
+  ## create standalone .html
+  mapshot(m, url = paste0(getwd(), "/map.html"))
+
+  ## create standalone .png; temporary .html is removed automatically unless
+  ## 'remove_url = FALSE' is specified
+  mapshot(m, file = paste0(getwd(), "/map.png"))
+  mapshot(m, file = paste0(getwd(), "/map.png"),
+          remove_controls = c("homeButton", "layersControl"))
+
+  ## create .html and .png
+  mapshot(m, url = paste0(getwd(), "/map.html"),
+          file = paste0(getwd(), "/map.png"))
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mapview2</em> version 2.10.4.9005 <a href="00Index.html">Index</a>]</div>
+</div></body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: mapview version of leaflet::color* functions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body><div class="container">
+
+<table width="100%" summary="page for mapviewColors {mapview2}"><tr><td>mapviewColors {mapview2}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>mapview version of leaflet::color* functions</h2>
+
+<h3>Description</h3>
+
+<p>mapview version of leaflet::color* functions
+</p>
+<p>Color palettes for mapview
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+mapviewColors(
+  x,
+  zcol = NULL,
+  colors = mapviewGetOption("vector.palette"),
+  at = NULL,
+  na.color = mapviewGetOption("na.color"),
+  ...
+)
+
+mapviewPalette(name = "mapviewVectorColors")
+
+mapViewPalette(name)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>Spatial* or Raster* object</p>
+</td></tr>
+<tr valign="top"><td><code>zcol</code></td>
+<td>
+<p>the column to be colored</p>
+</td></tr>
+<tr valign="top"><td><code>colors</code></td>
+<td>
+<p>color vector to be used for coloring the levels
+specified in at</p>
+</td></tr>
+<tr valign="top"><td><code>at</code></td>
+<td>
+<p>numeric vector giving the breakpoints for the colors</p>
+</td></tr>
+<tr valign="top"><td><code>na.color</code></td>
+<td>
+<p>the color for NA values.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments passed on to <code><a href="../../lattice/html/level.colors.html">level.colors</a></code></p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>Name of the color palette to be used. One of
+&quot;mapviewVectorColors&quot; (default), &quot;mapviewRasterColors&quot;,
+&quot;mapviewSpectralColors&quot; or &quot;mapviewTopoColors&quot;.</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Tim Appelhans
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../lattice/html/level.colors.html">level.colors</a></code>
+</p>
+<p><code><a href="../../grDevices/html/colorRamp.html">colorRampPalette</a></code>
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>mapview2</em> version 2.10.4.9005 <a href="00Index.html">Index</a>]</div>
+</div></body></html>
